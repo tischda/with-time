@@ -1,4 +1,4 @@
-﻿# go-now [![Build status](https://ci.appveyor.com/api/projects/status/apwc7sg9sak0syjx?svg=true)](https://ci.appveyor.com/project/tischda/go-now)
+﻿# gonow [![Build status](https://ci.appveyor.com/api/projects/status/apwc7sg9sak0syjx?svg=true)](https://ci.appveyor.com/project/tischda/gonow)
 
 Windows utility written in [Go](https://www.golang.org) to inject a %NOW% environment variable in a command.
 
@@ -7,13 +7,13 @@ Windows utility written in [Go](https://www.golang.org) to inject a %NOW% enviro
 There are no dependencies.
 
 ~~~
-go get github.com/tischda/go-now
+go get github.com/tischda/gonow
 ~~~
 
 ### Usage
 
 ~~~
-Usage: go-now [-h] [-v] command
+Usage: gonow [-h] [-v] command
 
 OPTIONS:
   -h
@@ -27,7 +27,7 @@ OPTIONS:
 Example:
 
 ~~~
-# go-now "echo now is %%NOW%% and windir is %windir%"
+# gonow "echo now is %%NOW%% and windir is %windir%"
 now is 20170720-150748 and windir is C:\WINDOWS
 ~~~
 
@@ -50,7 +50,7 @@ But this method only works for the French locale and is generally error prone.
 OK, but I still want to set a variable. Now you can do this:
 
 ~~~
-# for /f "delims=" %%a in ('go-now "echo %%%%NOW%%%%"') do @set REALNOW=%%a
+# for /f "delims=" %%a in ('gonow "echo %%%%NOW%%%%"') do @set REALNOW=%%a
 # echo %REALNOW%
 20170720-151620
 ~~~

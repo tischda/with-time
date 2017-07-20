@@ -23,12 +23,12 @@ build_script:
   - go build -ldflags "-X main.version=%version% -s"
 
 test_script:
-  - go-now.exe -version
-  - go-now.exe "echo now is %%NOW%%
+  - gonow.exe -version
+  - gonow.exe "echo now is %%NOW%%
 
 artifacts:
-  - path: go-now.exe
-    name: go-now
+  - path: gonow.exe
+    name: gonow
 
 deploy: off
 

@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-const PROG_NAME string = "go-now"
+const PROG_NAME string = "gonow"
 
 var version string
 var flag_help = flag.Bool("help", false, "displays this help message")
@@ -30,7 +30,7 @@ func main() {
 	flag.Parse()
 
 	if *flag_version {
-		fmt.Println("go-now version", version)
+		fmt.Println("gonow version", version)
 	} else {
 		if *flag_help || flag.NArg() != 1 {
 			flag.Usage()
