@@ -1,4 +1,4 @@
-﻿# gonow [![Build status](https://ci.appveyor.com/api/projects/status/apwc7sg9sak0syjx?svg=true)](https://ci.appveyor.com/project/tischda/gonow)
+# gonow [![Build status](https://ci.appveyor.com/api/projects/status/nb8spqtr99has88f?svg=true)](https://ci.appveyor.com/project/tischda/gonow)
 
 Windows utility written in [Go](https://www.golang.org) to inject a %NOW% environment variable in a command.
 
@@ -35,7 +35,7 @@ Note that the `%%NOW%%` is replaced internally so `%` must be doubled.
 
 ### Background
 
-I used to write this kind of code to name my log files with the current date: 
+I used to write this kind of code to name my log files with the current date:
 
 ~~~
 :: compute current date for log file
