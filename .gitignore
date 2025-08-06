@@ -1,3 +1,4 @@
-vendor/**/
-coverage.out
-go-now.exe
+﻿coverage.out
+*.exe
+releaseinfo
+dist/

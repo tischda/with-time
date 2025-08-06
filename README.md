@@ -24,14 +24,34 @@ OPTIONS:
         print version and exit
 ~~~
 
-Example:
+## Examples
 
 ~~~
-# gonow "echo now is %%NOW%% and windir is %windir%"
+$ gonow.exe "echo now is %NOW% and windir is %windir%"
 now is 20170720-150748 and windir is C:\WINDOWS
 ~~~
 
-Note that the `%%NOW%%` is replaced internally so `%` must be doubled.
+Note that in a batch script the `%` must be doubled:
+
+~~~
+@echo off
+gonow.exe "echo now is %%NOW%% and windir is %windir%"
+~~~
+
+Assign the NOW value to another variable:
+~~~
+$ for /f "delims=" %a in ('gonow "echo %NOW%"') do @set REALNOW=%a
+$ echo %REALNOW%
+20170720-151620
+~~~
+
+and in a batch script:
+~~~
+@echo off
+for /f "delims=" %%a in ('gonow "echo %%NOW%%"') do set REALNOW=%%a
+echo %REALNOW%
+~~~
+
 
 ### Background
 
@@ -47,13 +67,6 @@ set LOGFILE=%LOG_DIR%\%JOB%_%D%-%T%.log
 
 But this method only works for the French locale and is generally error prone.
 
-OK, but I still want to set a variable. Now you can do this:
-
-~~~
-# for /f "delims=" %%a in ('gonow "echo %%%%NOW%%%%"') do @set REALNOW=%%a
-# echo %REALNOW%
-20170720-151620
-~~~
 
 ### References
 
