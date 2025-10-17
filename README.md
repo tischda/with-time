@@ -1,7 +1,7 @@
 [![Build Status](https://github.com/tischda/with-time/actions/workflows/build.yml/badge.svg)](https://github.com/tischda/with-time/actions/workflows/build.yml)
 [![Test Status](https://github.com/tischda/with-time/actions/workflows/test.yml/badge.svg)](https://github.com/tischda/with-time/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/tischda/with-time/badge.svg)](https://coveralls.io/r/tischda/with-time)
-[![Go Report Card](https://goreportcard.com/badge/github.com/tischda/with-time/v3)](https://goreportcard.com/report/github.com/tischda/with-time/v3)
+[![Go Report Card](https://goreportcard.com/badge/github.com/tischda/with-time/)](https://goreportcard.com/report/github.com/tischda/with-time/)
 
 # with-time
 
