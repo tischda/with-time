@@ -34,6 +34,16 @@ func initFlags() *Config {
 	return cfg
 }
 
+var layoutReplacer = strings.NewReplacer(
+	"YYYY", "2006",
+	"MM", "01",
+	"DD", "02",
+	"HH", "15",
+	"mm", "04",
+	"ss", "05",
+	"ms", "000",
+)
+
 func main() {
 	log.SetFlags(0)
 	cfg := initFlags()
@@ -81,22 +91,23 @@ EXAMPLES:`)
 		flag.Usage()
 		return
 	}
-	process(flag.Arg(0))
+	processedCommand := process(flag.Arg(0), time.Now())
+	cmd := exec.Command("cmd", "/c", processedCommand)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Run()
 }
 
-var layoutReplacer = strings.NewReplacer(
-	"YYYY", "2006",
-	"MM", "01",
-	"DD", "02",
-	"HH", "15",
-	"mm", "04",
-	"ss", "05",
-	"ms", "000",
-)
-
-func process(command string) {
+// process replaces any %TIME:format% placeholders in the command string.
+//
+// It takes a command string and a time.Time, and returns the processed
+// command string with the placeholders replaced by the formatted time.
+//
+// The format inside the placeholder can be a YYYYMMDD style format
+// or a standard Go time layout string. If the format is empty,
+// time.UnixDate is used.
+func process(command string, now time.Time) string {
 	re := regexp.MustCompile(`%TIME:(.*?)%`)
-	now := time.Now()
 
 	processedCommand := re.ReplaceAllStringFunc(command, func(placeholder string) string {
 		// Extract format from placeholder, e.g., "%TIME:2006%" -> "2006"
@@ -113,8 +124,5 @@ func process(command string) {
 		return placeholder
 	})
 
-	cmd := exec.Command("cmd", "/c", processedCommand)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	cmd.Run()
+	return processedCommand
 }
