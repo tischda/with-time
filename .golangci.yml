@@ -1,0 +1,4 @@
+output:
+  formats:
+    - html:
+        path: lint-report.html
