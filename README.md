@@ -1,6 +1,8 @@
 [![Build Status](https://github.com/tischda/with-time/actions/workflows/build.yml/badge.svg)](https://github.com/tischda/with-time/actions/workflows/build.yml)
 [![Test Status](https://github.com/tischda/with-time/actions/workflows/test.yml/badge.svg)](https://github.com/tischda/with-time/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/tischda/with-time/badge.svg)](https://coveralls.io/r/tischda/with-time)
+[![Lint Status](https://github.com/tischda/with-time/actions/workflows/lint.yml/badge.svg)](https://github.com/tischda/with-time/actions/workflows/lint.yml)
+
 
 # with-time
 
