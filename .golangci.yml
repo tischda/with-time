@@ -1,4 +1,4 @@
 output:
   formats:
-    - html:
-        path: lint-report.html
+    html:
+      path: lint-report.html
