@@ -22,19 +22,20 @@ jobs:
         go-version: stable
         cache: false # no point in caching if go.sum is absent
 
+    - name: Build
+      run: |
+        GOOS=windows GOARCH=amd64 go build
+
     - name: Run golangci-lint
       uses: golangci/golangci-lint-action@v8
       with:
         version: v2.5.0
-        args: --output.html.path=lint-report.html || echo "Lint issues found"
-      id: lint
+    #     args: --output.html.path=lint-report.html || echo "Lint issues found"
+    #   id: lint
 
-    - name: Upload Lint Report
-      uses: actions/upload-artifact@v4
-      with:
-        name: golangci-lint-report
-        path: lint-report.html
+    # - name: Upload Lint Report
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: golangci-lint-report
+    #     path: lint-report.html
 
-    - name: build
-      run: |
-        GOOS=windows GOARCH=amd64 go build
