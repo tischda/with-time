@@ -20,12 +20,16 @@ jobs:
     - uses: actions/setup-go@v6
       with:
         go-version: stable
-        cache: false # disables caching if go.sum is absent
-
-    - name: Run golangci-lint
-      uses: golangci/golangci-lint-action@v8
+        cache: false # no point in caching if go.sum is absent
+    - uses: golangci/golangci-lint-action@v8
       with:
         version: v2.5.0
+
+    - name: Run golangci-lint
+      id: lint
+      run: |
+        set -o pipefail
+        golangci-lint run --output.html.path=lint-report.html || echo "Lint issues found"
 
     - name: Upload Lint Report
       uses: actions/upload-artifact@v4
