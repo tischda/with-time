@@ -23,6 +23,7 @@ jobs:
       uses: actions/setup-go@v5
       with:
         go-version: '1.25'
+        cache: false # disables caching if go.sum is absent
 
     - name: Build Windows binary
       run: |
