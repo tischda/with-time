@@ -23,7 +23,9 @@ jobs:
         cache: false # disables caching if go.sum is absent
 
     - name: Run golangci-lint
-      run: golangci-lint run
+      uses: golangci/golangci-lint-action@v8
+      with:
+        version: v2.5.0
 
     - name: Upload Lint Report
       uses: actions/upload-artifact@v4
