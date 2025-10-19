@@ -14,13 +14,13 @@ Windows utility that injects a `%TIME:format%` environment variable in a command
 The format is a golang [Time.Format](https://pkg.go.dev/time#Time.Format).
 
 
-### Install
+## Install
 
 ~~~
 go install github.com/tischda/with-time/v2@latest
 ~~~
 
-### Usage
+## Usage
 
 ~~~
 Usage: with-time "COMMAND"
@@ -69,7 +69,7 @@ echo %NOW%
 ~~~
 
 
-### Background
+## Background
 
 I used to write this kind of code to name my log files with the current date:
 
@@ -84,6 +84,6 @@ set LOGFILE=%LOG_DIR%\%JOB%_%D%-%T%.log
 But this method only works for the French locale and is generally error prone.
 
 
-### References
+## References
 
 * https://stackoverflow.com/questions/1192476/format-date-and-time-in-a-windows-batch-script
