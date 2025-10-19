@@ -26,7 +26,7 @@ jobs:
       uses: golangci/golangci-lint-action@v8
       with:
         version: v2.5.0
-        args: --out-format=html > lint-report.html || echo "Lint issues found"
+        args: --output.html.path=lint-report.html || echo "Lint issues found"
       id: lint
 
     - name: Upload Lint Report
