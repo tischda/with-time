@@ -1,4 +1,4 @@
-name: Build
+name: build
 permissions:
   contents: read
   pull-requests: read

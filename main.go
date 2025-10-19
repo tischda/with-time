@@ -95,7 +95,10 @@ EXAMPLES:`)
 	cmd := exec.Command("cmd", "/c", processedCommand)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
-	cmd.Run()
+	err := cmd.Run()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 // process replaces any %TIME:format% placeholders in the command string.

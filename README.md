@@ -1,7 +1,10 @@
 [![Build Status](https://github.com/tischda/with-time/actions/workflows/build.yml/badge.svg)](https://github.com/tischda/with-time/actions/workflows/build.yml)
 [![Test Status](https://github.com/tischda/with-time/actions/workflows/test.yml/badge.svg)](https://github.com/tischda/with-time/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/tischda/with-time/badge.svg)](https://coveralls.io/r/tischda/with-time)
-[![Lint Status](https://github.com/tischda/with-time/actions/workflows/lint.yml/badge.svg)](https://github.com/tischda/with-time/actions/workflows/lint.yml)
+[![Linter Status](https://github.com/tischda/with-time/actions/workflows/lint.yml/badge.svg)](https://github.com/tischda/with-time/actions/workflows/lint.yml)
+
+[![License](https://img.shields.io/github/license/tischda/with-time)](/LICENSE)
+[![Release](https://img.shields.io/github/release/tischda/with-time.svg)](https://github.com/tischda/with-time/releases/latest)
 
 
 # with-time
