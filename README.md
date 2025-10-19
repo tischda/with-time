@@ -9,7 +9,7 @@
 # with-time
 
 
-Windows utility that injects a %TIME:format% environment variable in a command.
+Windows utility that injects a `%TIME:format%` environment variable in a command.
 
 The format is a golang [Time.Format](https://pkg.go.dev/time#Time.Format).
 
@@ -54,14 +54,14 @@ $ with-time.exe "echo now is %TIME:20060102-150405% and windir is %windir%"
 now is 20170720-150748 and windir is C:\WINDOWS
 ~~~
 
-Note that in a batch script the `%` surrounding the TIME variable must be doubled:
+Note that in a batch script the `%` surrounding the `TIME` variable must be doubled:
 
 ~~~
 @echo off
 with-time.exe "echo now is %%TIME:20060102-150405%% and windir is %windir%"
 ~~~
 
-Assign the TIME value to another variable (only works in a batch script):
+Assign the `TIME` value to another variable (only works in a batch script):
 ~~~
 @echo off
 for /f "delims=" %%a in ('with-time "echo %%TIME:20060102-150405%%"') do set NOW=%%a
