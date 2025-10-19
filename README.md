@@ -1,7 +1,7 @@
 [![Build Status](https://github.com/tischda/with-time/actions/workflows/build.yml/badge.svg)](https://github.com/tischda/with-time/actions/workflows/build.yml)
 [![Test Status](https://github.com/tischda/with-time/actions/workflows/test.yml/badge.svg)](https://github.com/tischda/with-time/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/tischda/with-time/badge.svg)](https://coveralls.io/r/tischda/with-time)
-[![Go Report Card](https://goreportcard.com/badge/github.com/tischda/with-time/)](https://goreportcard.com/report/github.com/tischda/with-time/)
+[![Go Report Card](https://goreportcard.com/badge/github.com/tischda/with-time)](https://goreportcard.com/report/github.com/tischda/with-time)
 
 # with-time
 
@@ -14,7 +14,7 @@ The format is a golang [Time.Format](https://pkg.go.dev/time#Time.Format).
 ### Install
 
 ~~~
-go install github.com/tischda/with-time
+go install github.com/tischda/with-time/v2@latest
 ~~~
 
 ### Usage
